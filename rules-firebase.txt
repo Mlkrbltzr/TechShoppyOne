@@ -1,0 +1,16 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": true,
+    "products": {
+      ".indexOn": ["brand", "id"],
+        "$localId": {
+        ".read": "auth != null && auth.uid == $localId",
+        ".write": "auth != null && auth.uid == $localId"
+      }
+    },
+    "orders": {
+      ".indexOn": ["userId"]
+    }
+  }
+}
